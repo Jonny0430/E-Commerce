@@ -29,11 +29,11 @@ const Pagination: FC<Props> = ({ isNext, pageNumber }) => {
 	return (
 		<div className='flex w-full items-center justify-center gap-2 mt-4'>
 			<Button size={'sm'} onClick={() => onNavigation('prev')} disabled={pageNumber === 1}>
-				Prev
+			    이전
 			</Button>
 			<p>1</p>
 			<Button size={'sm'} onClick={() => onNavigation('next')} disabled={!isNext}>
-				Next
+			    다음
 			</Button>
 		</div>
 	)

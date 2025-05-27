@@ -13,7 +13,7 @@ const Page = async () => {
 
 	return (
 		<>
-			<h1 className='text-xl font-semibold'>Personal information</h1>
+			<h1 className='text-xl font-semibold'>지갑/프로필 정보</h1>
 			<Separator className='my-3' />
 			<EditInformation user={JSON.parse(JSON.stringify(session?.currentUser))} />
 			<div className='grid grid-cols-3 gap-4'>
@@ -21,7 +21,7 @@ const Page = async () => {
 					<Shuffle size={50} />
 					<div className='text-center'>
 						<h1 className='text-4xl font-bold'>{statistics?.totalOrders}</h1>
-						<p>Orders</p>
+						<p>거래 내역</p>
 					</div>
 				</div>
 
@@ -29,7 +29,7 @@ const Page = async () => {
 					<Banknote size={50} />
 					<div className='text-center'>
 						<h1 className='text-4xl font-bold'>{statistics?.totalTransactions}</h1>
-						<p>Payments</p>
+						<p>펀딩 내역</p>
 					</div>
 				</div>
 
@@ -37,7 +37,7 @@ const Page = async () => {
 					<Heart size={50} />
 					<div className='text-center'>
 						<h1 className='text-4xl font-bold'>{statistics?.totalFavourites}</h1>
-						<p>Watch list</p>
+						<p>관심 자산</p>
 					</div>
 				</div>
 			</div>

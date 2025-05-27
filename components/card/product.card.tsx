@@ -7,7 +7,6 @@ import { FC, MouseEvent } from 'react'
 import { Button } from '../ui/button'
 import { Heart } from 'lucide-react'
 import { formatPrice } from '@/lib/utils'
-import NoSSR from 'react-no-ssr'
 import useAction from '@/hooks/use-action'
 import { addFavorite } from '@/actions/user.action'
 import { toast } from '@/hooks/use-toast'
@@ -30,7 +29,7 @@ const ProductCard: FC<Props> = ({ product }) => {
 			return onError(res.data.failure)
 		}
 		if (res.data.status === 200) {
-			toast({ description: 'Added to favorites' })
+			toast({ description: '관심 자산에 추가되었습니다' })
 			setIsLoading(false)
 		}
 	}
@@ -47,9 +46,10 @@ const ProductCard: FC<Props> = ({ product }) => {
 			</div>
 			<div className='flex justify-between items-center mt-2 text-sm'>
 				<h1 className='font-bold line-clamp-1'>{product.title}</h1>
-				<NoSSR>
-					<p className='font-medium'>{formatPrice(product.price!)}</p>
-				</NoSSR>
+				<p className='font-medium'>
+  {typeof window !== 'undefined' ? formatPrice(product.price!) : null}
+</p>
+
 			</div>
 			<p className='text-xs text-muted-foreground'>{product.category}</p>
 		</div>

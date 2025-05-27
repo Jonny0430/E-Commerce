@@ -83,8 +83,8 @@ const SignUpPage = () => {
 
 	return (
 		<Card className='w-1/2 p-4'>
-			<h1 className='text-xl font-bold'>Sign Up</h1>
-			<p className='text-sm text-muted-foreground'>Welcome to our platform! Please sign up to create an</p>
+			<h1 className='text-xl font-bold'>회원 가입</h1>
+			<p className='text-sm text-muted-foreground'>KBILL 플랫폼에 오신 것을 환영합니다!</p>
 			<Separator className='my-3' />
 			<Form {...form}>
 				<form onSubmit={form.handleSubmit(onSubmit)} className='space-y-2'>
@@ -93,7 +93,7 @@ const SignUpPage = () => {
 						name='fullName'
 						render={({ field }) => (
 							<FormItem className='space-y-0'>
-								<Label>Full Name</Label>
+								<Label>지갑 소유자 이름</Label>
 								<FormControl>
 									<Input placeholder='Osman Ali' disabled={isLoading || isVerifying} {...field} />
 								</FormControl>
@@ -106,7 +106,7 @@ const SignUpPage = () => {
 						name='email'
 						render={({ field }) => (
 							<FormItem className='space-y-0'>
-								<Label>Email</Label>
+								<Label>이메일</Label>
 								<FormControl>
 									<Input placeholder='example@gmial.com' disabled={isLoading || isVerifying} {...field} />
 								</FormControl>
@@ -119,7 +119,7 @@ const SignUpPage = () => {
 						name='password'
 						render={({ field }) => (
 							<FormItem className='space-y-0'>
-								<Label>Password</Label>
+								<Label>인증 코드</Label>
 								<FormControl>
 									<Input placeholder='****' type='password' disabled={isLoading || isVerifying} {...field} />
 								</FormControl>
@@ -129,7 +129,7 @@ const SignUpPage = () => {
 					/>
 					{!isVerifying && (
 						<Button type='submit' disabled={isLoading}>
-							Submit {isLoading && <Loader className='animate-spin' />}
+							확인 {isLoading && <Loader className='animate-spin' />}
 						</Button>
 					)}
 				</form>
@@ -142,7 +142,7 @@ const SignUpPage = () => {
 							name='otp'
 							render={({ field }) => (
 								<FormItem className='space-y-0 w-full'>
-									<Label>Enter OTP</Label>
+									<Label>인증 코드를 입력하세요</Label>
 									<FormControl>
 										<InputOTP maxLength={6} {...field}>
 											<InputOTPGroup>
@@ -164,11 +164,11 @@ const SignUpPage = () => {
 						/>
 						<div className='flex items-center gap-1'>
 							<Button type='submit' disabled={isLoading || isResend}>
-								Verify {isLoading && <Loader className='animate-spin' />}
+							   인증 코드 확인하기 {isLoading && <Loader className='animate-spin' />}
 							</Button>
 							{isResend && (
 								<Button type='button' onClick={() => onSubmit(form.getValues())} disabled={isLoading}>
-									Resend OTP {isLoading && <Loader className='animate-spin' />}
+									인증 코드를 다시 보내기 {isLoading && <Loader className='animate-spin' />}
 								</Button>
 							)}
 						</div>
@@ -177,9 +177,9 @@ const SignUpPage = () => {
 			)}
 			<div className='mt-4'>
 				<div className='text-sm text-muted-foreground'>
-					Already have an account?{' '}
+				     이미 지갑을 연결하셨습니까?{' '}
 					<Button asChild variant={'link'} className='p-0'>
-						<Link href='/sign-in'>Sign in</Link>
+						<Link href='/sign-in'>회원 가입</Link>
 					</Button>
 				</div>
 			</div>

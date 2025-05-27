@@ -41,33 +41,33 @@ const UserBox: FC<Props> = ({ user }) => {
 					</Avatar>
 				</DropdownMenuTrigger>
 				<DropdownMenuContent className='w-56'>
-					<DropdownMenuLabel>My Account</DropdownMenuLabel>
+					<DropdownMenuLabel>지갑</DropdownMenuLabel>
 					<DropdownMenuSeparator />
 					{user.role === 'admin' && (
 						<DropdownMenuItem className='cursor-pointer' asChild>
-							<Link href={'/admin'}>Admin</Link>
+							<Link href={'/admin'}>KBILL 관리</Link>
 						</DropdownMenuItem>
 					)}
 					<DropdownMenuItem className='cursor-pointer' asChild>
-						<Link href={'/dashboard'}>Dashboard</Link>
+						<Link href={'/dashboard'}>KBILL 대시보드</Link>
 					</DropdownMenuItem>
 					<DropdownMenuItem className='cursor-pointer' onClick={() => setOpen(true)}>
 						<LogIn />
-						<span>Logout</span>
+						<span>로그아웃</span>
 					</DropdownMenuItem>
 				</DropdownMenuContent>
 			</DropdownMenu>
 			<AlertDialog open={open} onOpenChange={setOpen}>
 				<AlertDialogContent>
 					<AlertDialogHeader>
-						<AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>
+						<AlertDialogTitle>지갑 연결을 해제하시겠습니까?</AlertDialogTitle>
 						<AlertDialogDescription>
-							This action cannot be undone. This will logout you from the application.
+						     이 작업은 되돌릴 수 없습니다. 이 작업은 지갑 연결을 해제하고 세션을 종료합니다.
 						</AlertDialogDescription>
 					</AlertDialogHeader>
 					<AlertDialogFooter>
-						<AlertDialogCancel>Cancel</AlertDialogCancel>
-						<AlertDialogAction onClick={() => signOut({ callbackUrl: '/sign-in' })}>Continue</AlertDialogAction>
+						<AlertDialogCancel>취소</AlertDialogCancel>
+						<AlertDialogAction onClick={() => signOut({ callbackUrl: '/sign-in' })}>연결 해제 확인</AlertDialogAction>
 					</AlertDialogFooter>
 				</AlertDialogContent>
 			</AlertDialog>

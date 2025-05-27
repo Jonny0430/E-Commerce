@@ -8,7 +8,7 @@ import { Banknote, Edit2, Heart, Shuffle } from 'lucide-react'
 const Loading = () => {
 	return (
 		<>
-			<h1 className='text-xl font-semibold'>Personal information</h1>
+			<h1 className='text-xl font-semibold'>지갑/프로필 정보</h1>
 
 			<Separator className='my-3' />
 
@@ -43,21 +43,21 @@ const Loading = () => {
 				<div className='border-2 p-2 flex justify-center flex-col space-y-2 items-center shadow-md hover:animate-pulse transition-all cursor-pointer'>
 					<Shuffle size={50} />
 					<div className='text-center'>
-						<p>Orders</p>
+						<p>거래 내역</p>
 					</div>
 				</div>
 
 				<div className='border-2 p-2 flex justify-center flex-col space-y-2 items-center shadow-md hover:animate-pulse transition-all cursor-pointer'>
 					<Banknote size={50} />
 					<div className='text-center'>
-						<p>Payments</p>
+						<p>펀딩 내역</p>
 					</div>
 				</div>
 
 				<div className='border-2 p-2 flex justify-center flex-col space-y-2 items-center shadow-md hover:animate-pulse transition-all cursor-pointer'>
 					<Heart size={50} />
 					<div className='text-center'>
-						<p>Watch list</p>
+						<p>관심 자산</p>
 					</div>
 				</div>
 			</div>

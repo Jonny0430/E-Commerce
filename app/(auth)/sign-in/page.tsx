@@ -40,15 +40,15 @@ const SignInPage = () => {
 			return onError(res.data.failure)
 		}
 		if (res.data.user) {
-			toast({ description: 'Logged in successfully' })
+			toast({ description: '지갑이 성공적으로 연결되었습니다' })
 			signIn('credentials', { userId: res.data.user._id, callbackUrl: '/' })
 		}
 	}
 
 	return (
 		<Card className='w-1/2 p-4'>
-			<h1 className='text-xl font-bold'>Sign In</h1>
-			<p className='text-sm text-muted-foreground'>Welcome back! Please sign in to your account and fill all fields.</p>
+			<h1 className='text-xl font-bold'>회원가입</h1>
+			<p className='text-sm text-muted-foreground'>KBILL 플랫폼에 다시 오신 것을 환영합니다! 계속하려면 지갑을 연결하고 모든 필수 항목을 입력해 주세요.</p>
 			<Separator className='my-3' />
 			<Form {...form}>
 				<form onSubmit={form.handleSubmit(onSubmit)} className='space-y-2'>
@@ -57,7 +57,7 @@ const SignInPage = () => {
 						name='email'
 						render={({ field }) => (
 							<FormItem className='space-y-0'>
-								<Label>Email</Label>
+								<Label>이메일</Label>
 								<FormControl>
 									<Input placeholder='example@gmial.com' disabled={isLoading} {...field} />
 								</FormControl>
@@ -70,7 +70,7 @@ const SignInPage = () => {
 						name='password'
 						render={({ field }) => (
 							<FormItem className='space-y-0'>
-								<Label>Password</Label>
+								<Label>비밀번호</Label>
 								<FormControl>
 									<Input placeholder='****' type='password' disabled={isLoading} {...field} />
 								</FormControl>
@@ -79,16 +79,16 @@ const SignInPage = () => {
 						)}
 					/>
 					<Button type='submit' disabled={isLoading}>
-						Submit {isLoading && <Loader className='animate-spin' />}
+						확인 {isLoading && <Loader className='animate-spin' />}
 					</Button>
 				</form>
 			</Form>
 
 			<div className='mt-4'>
 				<div className='text-sm text-muted-foreground'>
-					Don&apos;t have an account?{' '}
+				   지갑을 연결하지 않으셨나요?{' '}
 					<Button asChild variant={'link'} className='p-0'>
-						<Link href='/sign-up'>Sign up</Link>
+						<Link href='/sign-up'>회원 가입</Link>
 					</Button>
 				</div>
 			</div>

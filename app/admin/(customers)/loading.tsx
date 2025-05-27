@@ -17,11 +17,11 @@ const Loading = () => {
 				<TableHeader>
 					<TableRow>
 						<TableHead>№</TableHead>
-						<TableHead>Email</TableHead>
-						<TableHead>Full Name</TableHead>
-						<TableHead>Orders</TableHead>
-						<TableHead>Status</TableHead>
-						<TableHead className='text-right'>Payments</TableHead>
+						<TableHead>Email (지갑 주소)</TableHead>
+						<TableHead>Full Name (참여자 이름)</TableHead>
+						<TableHead>Transactions (거래 수)</TableHead>
+						<TableHead>Status (활동 상태)</TableHead>
+						<TableHead className='text-right'>Payments (총 펀딩 금액)</TableHead>
 					</TableRow>
 				</TableHeader>
 				<TableBody>

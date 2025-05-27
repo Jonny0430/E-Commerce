@@ -10,10 +10,10 @@ const Page = () => {
 					<div className='w-12 h-12 rounded-full bg-red-100 dark:bg-red-900 p-2 flex items-center justify-center mx-auto mb-3.5'>
 						<X />
 					</div>
-					<p className='mb-4 text-lg text-gray-900 dark:text-white'>Your payment was not processed</p>
+					<p className='mb-4 text-lg text-gray-900 dark:text-white'>펀딩 거래가 실패했습니다.</p>
 					<Button asChild>
 						<Link href={'/dashboard'}>
-							<span>Back to home</span>
+							<span>대시보드로 돌아가기</span>
 						</Link>
 					</Button>
 				</div>

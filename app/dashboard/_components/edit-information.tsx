@@ -85,7 +85,7 @@ const EditInformation: FC<Props> = ({ user }) => {
 					<AccordionItem value='item-1'>
 						<AccordionTrigger>
 							<div className='flex flex-col space-y-0'>
-								<h2 className='font-bold'>Full Name</h2>
+								<h2 className='font-bold'>닉네임</h2>
 								<p className='text-muted-foreground'>{user.fullName}</p>
 							</div>
 						</AccordionTrigger>
@@ -96,7 +96,7 @@ const EditInformation: FC<Props> = ({ user }) => {
 					<AccordionItem value='item-2'>
 						<AccordionTrigger>
 							<div className='flex flex-col space-y-0'>
-								<h2 className='font-bold'>Emal</h2>
+								<h2 className='font-bold'>이메일</h2>
 								<p className='text-muted-foreground'>{user.email}</p>
 							</div>
 						</AccordionTrigger>

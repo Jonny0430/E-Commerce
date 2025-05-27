@@ -44,7 +44,7 @@ const Page: FC<Props> = async ({ params }) => {
 				<p className='font-bold'>{formatPrice(+product.price)}</p>
 				<CreateOrderButton />
 				<div className='text-xs'>
-					Your purchase is secure with us. We do not store any credit card information. We use Payme for payment processing.
+				토큰 구매는 블록체인 상에서 안전하게 보호됩니다. 우리는 개인 정보나 지갑 정보를 저장하지 않습니다. 거래는 이더리움과 같은 블록체인 네트워크를 통해 안전하게 처리됩니다.
 				</div>
 			</div>
 		</div>

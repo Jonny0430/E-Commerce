@@ -52,7 +52,7 @@ const FullNameForm: FC<Props> = ({ user }) => {
 					name='fullName'
 					render={({ field }) => (
 						<FormItem className='space-y-0'>
-							<Label className='text-xs'>Full Name</Label>
+							<Label className='text-xs'>닉네임</Label>
 							<FormControl>
 								<Input placeholder='Osman Ali' className='bg-white' disabled={isLoading} {...field} />
 							</FormControl>
@@ -61,7 +61,7 @@ const FullNameForm: FC<Props> = ({ user }) => {
 					)}
 				/>
 				<Button type='submit' className='self-end mb-0.5' size={'sm'} disabled={isLoading}>
-					Submit {isLoading && <Loader className='animate-spin' />}
+					확인 {isLoading && <Loader className='animate-spin' />}
 				</Button>
 			</form>
 		</Form>

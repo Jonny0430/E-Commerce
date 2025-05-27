@@ -25,7 +25,7 @@ const Page: FC<Props> = async props => {
 	return (
 		<>
 			<div className='flex justify-between items-center w-full'>
-				<h1 className='text-xl font-bold'>Products</h1>
+				<h1 className='text-xl font-bold'>토큰</h1>
 				<AddProduct />
 			</div>
 

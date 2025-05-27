@@ -25,29 +25,29 @@ const Page: FC<Props> = async props => {
 	return (
 		<>
 			<div className='flex justify-between items-center w-full'>
-				<h1 className='text-xl font-bold'>Customers</h1>
+				<h1 className='text-xl font-bold'>토큰 보유자</h1>
 				<Filter />
 			</div>
 
 			<Separator className='my-3' />
 
 			<Table>
-				{customers && customers.length > 0 && <TableCaption>A list of your recent custoemrs.</TableCaption>}
+				{customers && customers.length > 0 && <TableCaption>최근 참여자 목록.</TableCaption>}
 				<TableHeader>
-					<TableRow>
+				<TableRow>
 						<TableHead>№</TableHead>
-						<TableHead>Email</TableHead>
-						<TableHead>Full Name</TableHead>
-						<TableHead>Orders</TableHead>
-						<TableHead>Status</TableHead>
-						<TableHead className='text-right'>Payments</TableHead>
+						<TableHead>이메일</TableHead>
+						<TableHead>참여자.이름</TableHead>
+						<TableHead>거래.수</TableHead>
+						<TableHead>활동.상태</TableHead>
+						<TableHead className='text-right'>총.펀딩.금액</TableHead>
 					</TableRow>
 				</TableHeader>
 				<TableBody>
 					{customers && customers.length === 0 && (
 						<TableRow>
 							<TableCell colSpan={6} className='text-center'>
-								No customers found.
+							   참여자가 없습니다
 							</TableCell>
 						</TableRow>
 					)}

@@ -5,7 +5,6 @@ import Image from 'next/image'
 import { FC } from 'react'
 import { Button } from '../ui/button'
 import { Heart } from 'lucide-react'
-import NoSSR from 'react-no-ssr'
 import { formatPrice } from '@/lib/utils'
 import useAction from '@/hooks/use-action'
 import { deleteFavorite } from '@/actions/user.action'
@@ -46,9 +45,10 @@ const WatchListCard: FC<Props> = ({ product }) => {
 			<div className='p-2'>
 				<div className='flex justify-between items-center text-sm'>
 					<h1 className='font-bold'>{product.title}</h1>
-					<NoSSR>
-						<p className='font-medium'>{formatPrice(+product.price!)}</p>
-					</NoSSR>
+					<p className='font-medium'>
+  {typeof window !== 'undefined' ? formatPrice(product.price!) : null}
+</p>
+
 				</div>
 				<p className='text-xs text-muted-foreground leading-1 line-clamp-5'>{product.category}</p>
 			</div>

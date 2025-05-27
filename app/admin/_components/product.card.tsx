@@ -22,7 +22,6 @@ import { formatPrice } from '@/lib/utils'
 import { IProduct } from '@/types'
 import Image from 'next/image'
 import { FC } from 'react'
-import NoSSR from 'react-no-ssr'
 
 interface Props {
 	product: IProduct
@@ -61,9 +60,10 @@ const ProductCard: FC<Props> = ({ product }) => {
 			<div className='p-2'>
 				<div className='flex justify-between items-center text-sm'>
 					<h1 className='font-bold'>{product.title}</h1>
-					<NoSSR>
-						<p className='font-medium'>{formatPrice(product.price!)}</p>
-					</NoSSR>
+					<p className='font-medium'>
+  {typeof window !== 'undefined' ? formatPrice(product.price!) : null}
+</p>
+
 				</div>
 				<p className='text-xs text-muted-foreground leading-1 line-clamp-5'>{product.description}</p>
 				<Separator className='my-2' />
@@ -71,23 +71,23 @@ const ProductCard: FC<Props> = ({ product }) => {
 
 			<div className='grid grid-cols-2 gap-2 px-2 pb-2'>
 				<Button variant={'secondary'} onClick={onEdit}>
-					Edit
+				자산 수정
 				</Button>
 				<AlertDialog>
 					<AlertDialogTrigger asChild>
-						<Button variant={'outline'}>Delete</Button>
+						<Button variant={'outline'}>거래 삭제</Button>
 					</AlertDialogTrigger>
 					<AlertDialogContent>
 						<AlertDialogHeader>
-							<AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>
+							<AlertDialogTitle>이 거래를 삭제하시겠습니까?</AlertDialogTitle>
 							<AlertDialogDescription>
-								This action cannot be undone. This will permanently delete your account and remove your data from our servers.
+							이 작업은 블록체인 상에서 되돌릴 수 없습니다. 이 작업은 플랫폼에서 거래 기록을 영구적으로 삭제합니다.
 							</AlertDialogDescription>
 						</AlertDialogHeader>
 						<AlertDialogFooter>
-							<AlertDialogCancel disabled={isLoading}>Cancel</AlertDialogCancel>
+							<AlertDialogCancel disabled={isLoading}>취소</AlertDialogCancel>
 							<AlertDialogAction onClick={onDelete} disabled={isLoading}>
-								Continue
+							   삭제 확인
 							</AlertDialogAction>
 						</AlertDialogFooter>
 					</AlertDialogContent>

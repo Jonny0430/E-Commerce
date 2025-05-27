@@ -7,7 +7,7 @@ const Loading = () => {
 	return (
 		<>
 			<div className='flex justify-between items-center w-full'>
-				<h1 className='text-xl font-bold'>Orders</h1>
+				<h1 className='text-xl font-bold'>거래 내역</h1>
 				<Filter />
 			</div>
 
@@ -16,11 +16,11 @@ const Loading = () => {
 			<Table className='text-sm'>
 				<TableHeader>
 					<TableRow>
-						<TableHead>Product</TableHead>
-						<TableHead>Status</TableHead>
-						<TableHead>Price</TableHead>
-						<TableHead>Order time</TableHead>
-						<TableHead className='text-right'>Updated time</TableHead>
+						<TableHead>자산명</TableHead>
+						<TableHead>거래 상태</TableHead>
+						<TableHead>거래 금액</TableHead>
+						<TableHead>거래 시간</TableHead>
+						<TableHead className='text-right'>업데이트 시간</TableHead>
 					</TableRow>
 				</TableHeader>
 				<TableBody>

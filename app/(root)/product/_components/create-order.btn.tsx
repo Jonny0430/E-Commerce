@@ -72,7 +72,7 @@ const CreateOrderButton = () => {
 		<Popover>
 			<PopoverTrigger asChild>
 				<Button className='w-fit' size={'lg'}>
-					Purchase
+				    토큰 구매
 				</Button>
 			</PopoverTrigger>
 			<PopoverContent className='p-1 w-56' side='right'>

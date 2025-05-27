@@ -81,14 +81,14 @@ const AddProduct = () => {
 	return (
 		<>
 			<Button size={'sm'} onClick={onOpen}>
-				<span>Add Product</span>
+				<span>토큰 추가</span>
 				<PlusCircle />
 			</Button>
 			<Sheet open={open} onOpenChange={setOpen}>
 				<SheetContent>
 					<SheetHeader>
-						<SheetTitle>Manage your product</SheetTitle>
-						<SheetDescription>Field marked with * are required fields and must be filled.</SheetDescription>
+						<SheetTitle>자산 관리</SheetTitle>
+						<SheetDescription>토큰 등록을 위해 * 표시된 항목은 필수 입력입니다.</SheetDescription>
 					</SheetHeader>
 					<Separator className='my-3' />
 					<Form {...form}>
@@ -98,9 +98,9 @@ const AddProduct = () => {
 								name='title'
 								render={({ field }) => (
 									<FormItem className='space-y-0'>
-										<Label className='text-xs'>Title</Label>
+										<Label className='text-xs'>제목.(Title)</Label>
 										<FormControl>
-											<Input placeholder='Adidas shoes' className='bg-secondary' disabled={isLoading} {...field} />
+											<Input placeholder='KBILL - Korea Billion Token' className='bg-secondary' disabled={isLoading} {...field} />
 										</FormControl>
 										<FormMessage className='text-xs text-red-500' />
 									</FormItem>
@@ -111,10 +111,10 @@ const AddProduct = () => {
 								name='description'
 								render={({ field }) => (
 									<FormItem className='space-y-0'>
-										<Label className='text-xs'>Description</Label>
+										<Label className='text-xs'>설명.(Description)	</Label>
 										<FormControl>
 											<Textarea
-												placeholder='Adidas shoes are the best shoes in the world'
+												placeholder='	부산남해안벨트 디지털 경제 프로젝트를 위한 미래형 디지털 자산으로, DAO, NFT, 멤버십 기능을 포함합니다.'
 												disabled={isLoading}
 												className='bg-secondary'
 												{...field}
@@ -129,11 +129,11 @@ const AddProduct = () => {
 								name='category'
 								render={({ field }) => (
 									<FormItem className='space-y-0'>
-										<Label className='text-xs'>Cateogry</Label>
+										<Label className='text-xs'>카테고리.(Category)</Label>
 										<Select onValueChange={field.onChange} defaultValue={field.value} disabled={isLoading}>
 											<FormControl>
 												<SelectTrigger className='bg-secondary'>
-													<SelectValue placeholder='Select category' />
+													<SelectValue placeholder='KBILL' />
 												</SelectTrigger>
 											</FormControl>
 											<SelectContent>
@@ -157,7 +157,7 @@ const AddProduct = () => {
 											{!form.watch('price') ? 'Price' : `Price ${formatPrice(Number(form.watch('price')))} `}
 										</Label>
 										<FormControl>
-											<Input placeholder='100.000 UZS' type='number' className='bg-secondary' disabled={isLoading} {...field} />
+											<Input placeholder='100.000 ₩' type='number' className='bg-secondary' disabled={isLoading} {...field} />
 										</FormControl>
 										<FormMessage className='text-xs text-red-500' />
 									</FormItem>
@@ -189,7 +189,7 @@ const AddProduct = () => {
 								/>
 							)}
 							<Button type='submit' className='w-full' disabled={isLoading}>
-								Submit {isLoading && <Loader className='animate-spin' />}
+							   등록하기 {isLoading && <Loader className='animate-spin' />}
 							</Button>
 						</form>
 					</Form>

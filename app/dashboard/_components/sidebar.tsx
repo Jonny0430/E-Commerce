@@ -12,7 +12,7 @@ const Sidebar = () => {
 
 	return (
 		<div className='p-4 shadow-lg'>
-			<h1 className='font-semibold'>Dashboard</h1>
+			<h1 className='font-semibold'>KBILL 대시보드</h1>
 			<Separator />
 			<div className='flex flex-col mt-2'>
 				{dashboardSidebar.map(item => (

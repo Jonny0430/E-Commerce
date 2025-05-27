@@ -9,9 +9,14 @@ export function cn(...inputs: ClassValue[]) {
 	return twMerge(clsx(inputs))
 }
 
+// export function formatPrice(price: number) {
+// 	return new Intl.NumberFormat('uz-UZ', { style: 'currency', currency: 'UZS' }).format(price)
+// }
+
 export function formatPrice(price: number) {
-	return new Intl.NumberFormat('uz-UZ', { style: 'currency', currency: 'UZS' }).format(price)
-}
+	return new Intl.NumberFormat('ko-KR', { style: 'currency', currency: 'KRW' }).format(price)
+  }
+  
 
 export function formUrlQuery({ key, params, value }: QueryProps) {
 	const currentUrl = qs.parse(params)

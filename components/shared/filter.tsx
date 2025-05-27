@@ -42,23 +42,23 @@ const Filter: FC<Props> = ({ showCategory }) => {
 	return (
 		<div className={cn('gap-1 max-md:w-full grid', showCategory ? 'grid-cols-3' : 'grid-cols-2')}>
 			<div className='flex items-center bg-secondary max-md:w-1/2 border'>
-				<Input placeholder='Qidirish' className='text-xs border-none no-focus' onChange={handleSearchDebounce} />
+				<Input placeholder='검색' className='text-xs border-none no-focus' onChange={handleSearchDebounce} />
 				<Search className='mr-2 cursor-pointer text-muted-foreground' />
 			</div>
 
 			<Select onValueChange={onFilterChange}>
 				<SelectTrigger className='bg-secondary text-xs max-md:w-1/2'>
-					<SelectValue placeholder='Select filter' className='text-muted-foreground' />
+					<SelectValue placeholder='KBILL' className='text-muted-foreground' />
 				</SelectTrigger>
 				<SelectContent>
-					<SelectItem value='newest'>Newest</SelectItem>
-					<SelectItem value='oldest'>Oldest</SelectItem>
+					<SelectItem value='newest'>금액 낮은 순</SelectItem>
+					<SelectItem value='oldest'> 금액 높은 순</SelectItem>
 				</SelectContent>
 			</Select>
 			{showCategory && (
 				<Select onValueChange={onCategoryChange}>
 					<SelectTrigger className='bg-secondary text-xs max-md:w-1/2'>
-						<SelectValue placeholder='Select category' className='text-muted-foreground' />
+						<SelectValue placeholder='KBILL category' className='text-muted-foreground' />
 					</SelectTrigger>
 					<SelectContent>
 						{categories.map(category => (

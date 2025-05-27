@@ -14,9 +14,9 @@ const montserrat = Montserrat({
 })
 
 export const metadata: Metadata = {
-	title: 'Seleor e-commerce',
-	description: 'Seleor e-commerce website built with Next.js',
-	icons: { icon: '/favicon.png' },
+	title: 'KBILL-Bitcoin',
+	description: 'KBILL-Bitcoin website built with Next.js',
+	icons: { icon: '/logo.avif' },
 }
 
 const RootLayout: FC<ChildProps> = ({ children }) => {

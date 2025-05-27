@@ -27,28 +27,28 @@ const Page: FC<Props> = async props => {
 	return (
 		<>
 			<div className='flex justify-between items-center w-full'>
-				<h1 className='text-xl font-bold'>Payments</h1>
+				<h1 className='text-xl font-bold'>펀딩 내역</h1>
 				<Filter />
 			</div>
 
 			<Separator className='my-3' />
 
 			<Table className='text-sm'>
-				{transactions && transactions.length > 0 && <TableCaption>A list of your recent transactions.</TableCaption>}
+				{transactions && transactions.length > 0 && <TableCaption>최근 펀딩 목록.</TableCaption>}
 				<TableHeader>
 					<TableRow>
 						<TableHead></TableHead>
-						<TableHead>Product</TableHead>
-						<TableHead>Provider</TableHead>
-						<TableHead>Status</TableHead>
-						<TableHead className='text-right'>Price</TableHead>
+						<TableHead>토큰명</TableHead>
+						<TableHead>블록체인 네트워크</TableHead>
+						<TableHead>거래 상태</TableHead>
+						<TableHead className='text-right'>펀딩 금액</TableHead>
 					</TableRow>
 				</TableHeader>
 				<TableBody>
 					{transactions && transactions.length === 0 && (
 						<TableRow>
 							<TableCell colSpan={5} className='text-center'>
-								No transactions found.
+							   펀딩 내역 없음.
 							</TableCell>
 						</TableRow>
 					)}
