@@ -84,7 +84,7 @@ class ClickService {
 			error: ClickError.Success,
 			error_note: 'Success',
 		}
-	}
+	};
 
 	async complete(data) {
 		const {
