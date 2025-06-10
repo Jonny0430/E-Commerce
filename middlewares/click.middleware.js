@@ -9,4 +9,4 @@ const clickCheckToken = (data, signString) => {
 	return signatureHash === signString
 }
 
-module.exports = clickCheckToken
+module.exports = clickCheckToken;
