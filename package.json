@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "nodemon app.js",
     "start": "node app.js",
-    "build": "npm build"
+    "build": "echo 'No build step needed for pure JS backend'"
   },
   "keywords": [],
   "author": "",
