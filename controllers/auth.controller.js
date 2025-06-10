@@ -7,7 +7,7 @@ class AuthController {
 			const { email, password } = req.body
 
 			const user = await userModel.findOne({ email })
-			if (!user) return res.json({ failure: 'User not found' })
+			if (!user) return res.json({ failure: '지갑 주소를 찾을 수 없습니다' })
 
 			const isValidPassword = await bcrypt.compare(password, user.password)
 			if (!isValidPassword) return res.json({ failure: 'Password is incorrect' })

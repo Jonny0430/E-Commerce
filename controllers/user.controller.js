@@ -203,7 +203,7 @@ class UserController {
 			const { productId } = req.body
 			const userId = req.user._id
 			const isExist = await userModel.findOne({ _id: userId, favorites: productId })
-			if (isExist) return res.json({ failure: 'Product already in favorites' })
+			if (isExist) return res.json({ failure: '이미 관심 자산에 추가되었습니다' })
 			await userModel.findByIdAndUpdate(userId, { $push: { favorites: productId } })
 			return res.json({ status: 200 })
 		} catch (error) {
